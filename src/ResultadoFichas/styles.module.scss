@@ -1,0 +1,75 @@
+.containerMain {
+  display: flex;
+  flex-direction: column;
+  margin: 1rem;
+
+  .btn{
+    margin: auto;
+    
+    margin-top: 3rem;
+  }
+
+  .progressdiv {
+    margin-top: 1rem;
+    text-align: center;
+    span{
+      
+      font-weight: bold;
+    }
+  }
+}
+.container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+
+  .box {
+    margin-right: 0.5rem;
+    margin-left: 0rem;
+    text-align: center;
+    align-content: center;
+    width: 50vw;
+    min-height: 15rem;
+    display: grid;
+    border-radius: 10px;
+    box-shadow: 0px 6px 10px rgba(0, 0, 0, 0.25);
+    background-image: linear-gradient(
+      135deg,
+      rgb(26, 51, 148) 0%,
+      rgb(33, 138, 174) 69%,
+      rgb(32, 218, 224) 98%
+    ) !important;
+
+    &:last-child {
+      margin-right: 0rem;
+      margin-left: 0.5rem;
+    }
+
+    .content {
+      display: flex;
+      flex-direction: column;      
+      color: white;
+      
+      label{
+        font-size: 150%;        
+      }
+      margin: auto;
+      h1 {       
+        font-size: 500%;
+        margin: auto;
+      }
+      span {        
+        margin: auto;
+      }
+      
+    }
+    
+  }
+}
+
+.containerCards {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+}
+
+
