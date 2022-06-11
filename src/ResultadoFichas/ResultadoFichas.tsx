@@ -14,6 +14,7 @@ export default observer(function ResultadoFichas() {
     const [totalFichas, setTotalFichas] = useState<TotalFichas>({ peoples: 0, total: 0 });
     const [porcentagemAlcancada, setPorcentagemAlcancada] = useState<number>(0);    
     const [objetivo, setObjetivo] = useState<number>(100);
+    const [ganhador, setGanhador] = useState<any>();
 
     
 
@@ -57,7 +58,11 @@ export default observer(function ResultadoFichas() {
 
     }, [])
 
-    
+    function HandleSortear(){
+        agent.FichaApi.getRandomTicket().then((data) => {
+            setGanhador(data)
+        })
+    };
 
     return (
         <div className={styles.containerMain}>
@@ -86,8 +91,11 @@ export default observer(function ResultadoFichas() {
 
             
             <div className={styles.btn}>
-            <Button colorScheme='teal' size='lg'>Sortear</Button>
+                <Button colorScheme='teal' size='lg' onClick={HandleSortear}>Sortear</Button>
             </div>
+
+            {ganhador && 
+                (<strong><label>Nome: {ganhador.name}, Telefone: {ganhador.phone} </label></strong>)}
 
         </div>
 
